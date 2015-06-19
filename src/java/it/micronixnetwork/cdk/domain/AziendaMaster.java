@@ -5,8 +5,7 @@
  */
 package it.micronixnetwork.cdk.domain;
 
-import it.micronixnetwork.application.plugin.crude.annotation.SearchField;
-import it.micronixnetwork.application.plugin.crude.annotation.ToInput;
+import it.micronixnetwork.application.plugin.crude.annotation.ToList;
 import it.micronixnetwork.application.plugin.crude.model.AutoCreate;
 import it.micronixnetwork.application.plugin.crude.model.ViewModel;
 import javax.persistence.Column;
@@ -22,7 +21,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "aziende")
-
 public class AziendaMaster implements ViewModel, AutoCreate {
 
     private static final long serialVersionUID = 1L;
@@ -31,31 +29,28 @@ public class AziendaMaster implements ViewModel, AutoCreate {
     @Column(name = "IdAzienda")
     public Integer id;
 
-    //
-    @SearchField
+    @ToList
     @Column(name = "CodiceAzienda")
     public String codiceAzienda;
+    
+    @ToList(ordered = true,descendant = false,defaultOrdered = true)
+    @Column(name = "Descrizione")
+    public String descrizione;
 
-    //
-    @SearchField
     @Column(name = "SistemaInformativo")
     public String sistemaInformativo;
 
-    //
     @Column(name = "IpLocale")
     public String ipLocale;
 
-    //
     @Column(name = "UtenteDB")
     public String utenteDB;
 
-    //
     @Column(name = "PasswordDB")
     public String passwordDB;
 
     public AziendaMaster() {
     }
-
 
     @Override
     public String toString() {
@@ -66,7 +61,7 @@ public class AziendaMaster implements ViewModel, AutoCreate {
     public void initializeState() {
         codiceAzienda = "0";
         ipLocale = "127.0.0.1";
-        sistemaInformativo = "";
+        sistemaInformativo = "NAV";
         passwordDB = "";
         utenteDB = "none";
     }

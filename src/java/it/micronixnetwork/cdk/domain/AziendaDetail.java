@@ -11,6 +11,7 @@ import it.micronixnetwork.application.plugin.crude.annotation.Group2Directive;
 import it.micronixnetwork.application.plugin.crude.annotation.ToInput;
 import it.micronixnetwork.application.plugin.crude.annotation.ToView;
 import it.micronixnetwork.application.plugin.crude.annotation.renderer.SelectRenderer;
+import it.micronixnetwork.application.plugin.crude.annotation.renderer.TextRenderer;
 import it.micronixnetwork.application.plugin.crude.model.ViewModel;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,6 +43,11 @@ public class AziendaDetail implements ViewModel{
     
     @ToView
     @ToInput
+    @Column(name = "Descrizione")
+    public String descrizione;
+    
+    @ToView
+    @ToInput
     @SelectRenderer(map = "#{'NAV':'NAV','ACG':'ACG','XLS':'XLS'}")
     @Column(name = "SistemaInformativo")
     public String sistemaInformativo;
@@ -55,9 +61,10 @@ public class AziendaDetail implements ViewModel{
     @Column(name = "UtenteConnessione")
     public String utenteConnessione;
     
-    @ToView
+    @ToView(masked = true)
     @ToInput
     @Column(name = "PasswordConnessione")
+    @TextRenderer(type = "password")
     public String passwordConnessione;
     
     @ToView
@@ -75,9 +82,10 @@ public class AziendaDetail implements ViewModel{
     @Column(name = "UtenteDB")
     public String utenteDB;
     
-    @ToView
+    @ToView(masked = true)
     @ToInput
     @Column(name = "PasswordDB")
+    @TextRenderer(type = "password")
     public String passwordDB;
     
     @ToView
@@ -122,10 +130,9 @@ public class AziendaDetail implements ViewModel{
     @FieldStyleDirective(group=2)
     public String valutaBase;
 
-
     @Override
     public String toString() {
-        return codiceAzienda+" ["+sistemaInformativo+"]";
+        return codiceAzienda+" ["+descrizione+"]";
     }
     
 }

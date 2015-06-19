@@ -39,10 +39,6 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.crude_plugin_4.04.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
                     <file>${file.reference.defaultcheckin_plugin_4.01.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -67,11 +63,15 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.fragment_plugin_4.01.jar}</file>
+                    <file>${file.reference.drools-templates-5.4.0.Final.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.drools-templates-5.4.0.Final.jar}</file>
+                    <file>${file.reference.crude_plugin_4.05.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.fragment_plugin_4.02.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
