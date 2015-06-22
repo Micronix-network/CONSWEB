@@ -67,11 +67,11 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.crude_plugin_4.05.jar}</file>
+                    <file>${file.reference.fragment_plugin_4.02.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.fragment_plugin_4.02.jar}</file>
+                    <file>${file.reference.crude_plugin_4.06.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
